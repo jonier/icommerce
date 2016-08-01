@@ -66,7 +66,7 @@ $session->open()
                         <a href="index.php?r=order/index.php">Order</a>    
                     </li>
                     <li>
-                        <a href="index.php?r=category/index.php">Category</a>    
+                        <a href="/category/index">Category</a>    
                     </li>
                     <li>
                         <a href="index.php?r=product/index.php">Product</a>    
