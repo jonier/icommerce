@@ -63,25 +63,25 @@ $session->open()
             <ul class="navbar-nav navbar-right nav">
                 <?php if(!empty($session['account_id'])): ?>
                     <li>
-                        <a href="index.php?r=order/index.php">Order</a>    
+                        <a href="/order/index">Order</a>    
                     </li>
                     <li>
                         <a href="/category/index">Category</a>    
                     </li>
                     <li>
-                        <a href="index.php?r=product/index.php">Product</a>    
+                        <a href="/product/index">Product</a>    
                     </li>
                     <li>
-                        <a href="index.php?r=member/index.php">Member</a>    
+                        <a href="/member/index">Member</a>    
                     </li>
                     <li>
-                        <a href="index.php?r=report/index.php">Report</a>    
+                        <a href="/report/index">Report</a>    
                     </li>
                     <li>
-                        <a href="index.php?r=account/index.php">Account</a>    
+                        <a href="/account/index">Account</a>    
                     </li>
                     <li>
-                        <a href="index.php?r=company/index.php">Company</a>    
+                        <a href="/company/index">Company</a>    
                     </li>
                 <?php endif; ?>
             </ul>

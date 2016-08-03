@@ -44,7 +44,7 @@
 						<td><?php echo $category->name; ?></td>
 						<td><?php echo $category->remark; ?></td>
 						<td style="text-align: center; width: 110px;">
-							<a href="/category/edit?id=<?php echo $category->id; ?>" class="btn btn-success"> 
+							<a href="/category/form?id=<?php echo $category->id; ?>" class="btn btn-success"> 
 								<i class="glyphicon glyphicon-pencil"></i> 
 							</a>
 							<a href="/category/delete?id=<?php echo $category->id; ?>" class="btn btn-danger" onclick="return confirm('Are you sure delete data?')"> 

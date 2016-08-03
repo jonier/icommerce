@@ -28,12 +28,20 @@ class CategoryController extends Controller
 		return $this->render('/Category/Index', ['categories' => $categories, 'n' => 1]);
 	}
 
-	public function actionForm()
+	public function actionForm($id = null)
 	{
 		$session = new Session();
 		$session->open();
 
-		$category = new Category();
+		if(empty($id)){
+			$category = new Category();
+			$icon = 'glyphicon glyphicon-plus';
+			$title = 'New Category';
+		}else{
+			$category = Category::findOne($id);
+			$icon = 'glyphicon glyphicon-pencil';
+			$title = 'Edit Category';
+		}
 
 		if(!empty($_POST))
 		{
@@ -57,8 +65,20 @@ class CategoryController extends Controller
 
 		return $this->render('/Category/Form', [
 				'category' => $category,
-				'icon' => 'glyphicon glyphicon-plus',
-				'title' => 'New Category'
+				'icon' => $icon ,
+				'title' => $title
+			]);
+	}
+
+	//La accion Edit fue reemplazada por la accion Form
+	public function actionEdit($id)
+	{
+		$category = Category::findOne($id);
+
+		return $this->render('/Category/Form', [
+				'category' => $category,
+				'icon' => 'glyphicon glyphicon-pencil',
+				'title' => 'Edit Category'
 			]);
 	}
 
@@ -71,19 +91,7 @@ class CategoryController extends Controller
 
 		$session->setFlash('message', 'Delete.');
 
-		
-		
 		return $this->redirect(['index']);
 	}
 
-	public function actionEdit($id)
-	{
-		$category = Category::findOne($id);
-
-		return $this->render('/Category/Form', [
-				'category' => $category,
-				'icon' => 'glyphicon glyphicon-pencil',
-				'title' => 'Edit Category'
-			]);
-	}
 }
