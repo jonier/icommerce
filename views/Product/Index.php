@@ -48,7 +48,10 @@
 							<?php echo number_format($product->qty); ?>
 						</td>
 
-						<td style="text-align: center; width: 110px;">
+						<td style="text-align: center; width: 150px;">
+							<a href="/productimage/index?id=<?php echo $product->id; ?>" class="btn btn-info">
+								<i class="glyphicon glyphicon-picture"></i>
+							</a>
 							<a href="/product/form?id=<?php echo $product->id; ?>" class="btn btn-success"> 
 								<i class="glyphicon glyphicon-pencil"></i> 
 							</a>
